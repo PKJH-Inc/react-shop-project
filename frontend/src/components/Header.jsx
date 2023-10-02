@@ -1,8 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Link } from '@mui/material';
 import { ShoppingCart, Person } from '@mui/icons-material';
-// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-// import SendIcon from '@mui/icons-material/Send';
 
 const Header = () => {
   return (
