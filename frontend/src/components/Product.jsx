@@ -1,11 +1,12 @@
 import React from 'react';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import Rating from './RatingBar';
 
 const Product = ({ product }) => {
   return (
     <Card sx={{ height: '100%' }}>
-      <CardActionArea href={`/product/${product._id}`}>
+      <CardActionArea component={Link} to={`/product/${product._id}`}>
         <CardMedia sx={{ height: '150px' }} image={product.image} title={product.name} />
         <CardContent>
           <Typography gutterBottom variant="subtitle2">
