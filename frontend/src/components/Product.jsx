@@ -6,6 +6,7 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
+import Rating from './RatingBar';
 
 const Product = ({ product }) => {
   return (
@@ -20,10 +21,11 @@ const Product = ({ product }) => {
           <Typography gutterBottom variant="subtitle2">
             {product.name}
           </Typography>
-          <Typography variant="caption" color="textSecondary" component="p">
-            {product.rating} from {product.numReviews} reviews
-          </Typography>
-          <Typography variant="subtitle1" color="textPrimary" component="p">
+          <Rating
+            value={product.rating}
+            text={`${product.numReviews} reviews`}
+          />
+          <Typography variant="button" color="textPrimary" component="p">
             ${product.price}
           </Typography>
         </CardContent>
