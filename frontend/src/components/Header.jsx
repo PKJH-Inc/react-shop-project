@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { ShoppingCart, Person } from '@mui/icons-material';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -13,16 +13,22 @@ const Header = () => {
               Ecommerce Application
             </NavLink>
           </Typography>
-          <Link color="inherit" to="/cart">
-            <Button color="inherit" sx={{ color: 'white' }} startIcon={<ShoppingCart />}>
-              Cart
-            </Button>
-          </Link>
-          <Link color="inherit" to="/login">
-            <Button color="inherit" sx={{ color: 'white' }} startIcon={<Person />}>
-              Sign In
-            </Button>
-          </Link>
+          <Button
+            sx={{ color: 'white', '&.active': { color: 'yellow' }, '&:hover': { color: 'red' } }}
+            component={NavLink}
+            to="/cart"
+            startIcon={<ShoppingCart />}
+          >
+            Cart
+          </Button>
+          <Button
+            sx={{ color: 'white', '&.active': { color: 'yellow' }, '&:hover': { color: 'red' } }}
+            component={NavLink}
+            to="/login"
+            startIcon={<Person />}
+          >
+            Sign In
+          </Button>
         </Toolbar>
       </AppBar>
     </header>
