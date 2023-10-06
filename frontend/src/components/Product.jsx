@@ -6,7 +6,7 @@ import Rating from './RatingBar';
 const Product = ({ product }) => {
   return (
     <Card sx={{ height: '100%' }}>
-      <CardActionArea component={Link} to={`/product/${product._id}`}>
+      <CardActionArea component={Link} to={`/products/${product._id}`}>
         <CardMedia sx={{ height: '150px' }} image={product.image} title={product.name} />
         <CardContent>
           <Typography gutterBottom variant="subtitle2">

@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Typography } from '@mui/material';
 import Product from '../components/Product';
-// import products from '../products';
 
 const HomeScreen = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch('./api/products').then((res) => res.json());
+      const data = await fetch('api/products').then((res) => res.json());
       setProducts(data);
     };
     fetchData();
