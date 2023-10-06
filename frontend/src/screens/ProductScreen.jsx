@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Grid, List, ListItemText } from '@mui/material';
 import Rating from '../components/RatingBar';
-import products from '../products';
 
 const ProductScreen = ({ match }) => {
-  const product = products.find((p) => p._id === match.param.id);
+  const [product, setProduct] = useState([]);
+
+  console.log('object:', match);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const data = await fetch(`./api/products/${match.params.id}`).then((res) => res.json());
+      setProduct(data);
+    };
+    fetchProduct();
+  }, [match.params.id]);
 
   const addToCartBtnDisabled = product.countInStock === 0;
 

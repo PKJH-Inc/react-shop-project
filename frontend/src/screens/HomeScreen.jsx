@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grid, Typography } from '@mui/material';
 import Product from '../components/Product';
-import products from '../products';
+// import products from '../products';
 
 const HomeScreen = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch('./api/products').then((res) => res.json());
+      setProducts(data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <Grid container direction="row">
       <Typography variant="h5" style={{ marginTop: '25px' }} color="primary">
