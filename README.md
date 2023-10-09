@@ -1,2 +1,2 @@
 # react-shop-project
-It's my skill-up project!
+Personal project. Play your development!
