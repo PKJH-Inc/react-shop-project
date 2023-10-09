@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { Button, Grid, List, ListItemText } from '@mui/material';
 import Rating from '../components/RatingBar';
 import _ from 'lodash';
@@ -23,9 +23,9 @@ const ProductScreen = () => {
     <div sx={{ flexGrow: 1 }}>
       <Grid container spacing={4}>
         <Grid item xs={12} md={12} lg={12}>
-          <Link color="inherit" to="/">
-            <Button variant="outlined">Go back</Button>
-          </Link>
+          <Button component={NavLink} to="/" variant="outlined">
+            Go back
+          </Button>
         </Grid>
 
         <Grid item xs={12} md={5}>
